@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'homeapp/navbar.html' %}
+
+<div class="heading">
+    <span class="icon-logo"><img src="{% static 'images/icon-logo.png' %}" alt="#"></span>
+    <h2>The Specialist Doctors</h2>
+ </div>
+
+<!-- pink-banner -->
+<div class="banner-1">
+    <div class="banner-overlay">
+         <div class="container">
+         <div class="wthree_head_section">
+             <h3 class="pinkl_header">Contact <span>Us</span></h3>
+             <p>Sunflower Hospital build on 14 March, 2020. It's a well established hospital. And, Our main target is to gain your trust.</p>
+         </div>    
+     </div>
+     </div>
+ </div>
+ <!-- //banner -->
+
+
+
+  <!-- contact -->
+ <section class="contact-pinkls">
+     <div class="container">
+         <div class="con-top">
+             <div class="col-lg-6 col-md-6 col-sm-6 contact-pink-agile1" data-aos="flip-right">
+                 <!-- <div class="contact-agileits"> -->
+                     <h4 class="pinkl-contact">Get In Touch</h4> 
+
+                     <!-- <div id="popup1" class="overlay"> -->
+                   
+                            <div class="content">
+                              
+                                <form action="" method="POST" enctype="multipart/form-data">  
+                                    {% csrf_token %}    
+                                    <input name="name" type="text" class="feedback-input" placeholder="Name" />
+                                
+                                    <input required name="phonenumber" type="text" class="feedback-input" placeholder="write your phone number" />
+                                    <textarea name="message" class="feedback-input" placeholder="write your query"></textarea>
+                                    <input type="submit" value="SUBMIT"/>
+                                  </form>
+                    
+                                </div> 
+                    
+                            </div> 
+                          
+
+
+                 <!-- </div> -->
+             <!-- </div> -->
+             <div class="col-lg-6 col-md-6 col-sm-6 contact-pink-agile1" data-aos="flip-right">
+                 <h4 class="pinkl-contact">Connect With Us</h4> 
+                 
+                 <p class="contact-agile1"><strong>Phone :</strong> 01787064084</p>
+                 <p class="contact-agile1"><strong>Cell :</strong>01812292121</p>
+                 <p class="contact-agile1"><strong>Address :</strong> K R C Shurma Vally, Hotapara Bus Stand, Joydevpur, Gazipur </p>
+             </div>
+             <div class="clearfix"></div>
+         </div>
+     </div>
+ </section>
+
+
+ <!-- //contact -->
+
+
+
+
+
+
+{% include 'homeapp/footer.html' %}
+
+{% endblock %}

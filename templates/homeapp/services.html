@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% include 'homeapp/navbar.html' %}
+
+<div id="about" class="section wow fadeIn header-margin">
+   <div class="container">
+      <div class="heading">
+         <span class="icon-logo"><img src="{% static 'images/h.png'%}" alt="#"></span>
+         <h2>The Specialist Clinic</h2>
+      </div>
+
+<div class="row">
+
+   
+   {% for service in departments %}
+   <div class="col-md-3 col-sm-6 col-xs-12">
+      <a href="{% url 'homeapp:departmentdetails' service.pk %}" >
+      <div class="service-widget">
+         <div class="post-media wow fadeIn">
+            <img src="{{service.image.url}}" alt="" class="img-responsive">
+         </div>
+         <h3>{{service.name}}</h3>
+      </div>
+   </a>
+      <!-- end service -->
+   </div>
+   
+   {% endfor %}
+
+
+</div>
+
+</div>
+</div>
+
+
+
+
+{% include 'homeapp/footer.html' %}
+
+
+{% endblock %}
+
+
+

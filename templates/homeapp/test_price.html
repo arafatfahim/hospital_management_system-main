@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+{% include 'homeapp/navbar.html' %}
+
+<div class="container table-responsive">
+  <div class="heading">
+    <span class="icon-logo"><img src="{% static 'images/h.png'%}" alt="#"></span>
+    <h2>Lab Test Details</h2>
+ </div>
+ </div>
+    
+  
+</div>
+
+<div class="container  py-5"> 
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Test Name</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Result Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for lav in laboratorys %}
+        <tr>
+          <th scope="row">{{lav.id}}</th>
+          <td>{{lav.testname}}</td>
+          <td>{{lav.costoftest}}</td>
+          <td>{{lav.resulttime}}</td>
+        </tr>
+        {% endfor %}
+        
+      </tbody>
+    </table>
+    </div>
+    
+
+
+{% include 'homeapp/footer.html' %}
+
+{% endblock %}

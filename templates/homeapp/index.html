@@ -1,0 +1,234 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% include 'homeapp/navbar.html' %}
+
+
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+   <div class="carousel-inner">
+     <div class="carousel-item active">
+       <img src="{% static 'images/slider1.jpeg' %}" class="d-block w-100" alt="...">
+     </div>
+  
+   </div>
+  
+ </div>
+
+<!-- end section -->
+<div id="time-table" class="time-table-section">
+   <div class="container">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+         <div class="row">
+            <div class="service-time one" style="background:#2895f1;">
+               <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
+               <h3>Emergency Case</h3>
+               <p>For Emergency Case, we have ambulance. You can take this service also.</p>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+         <div class="row">
+            <div class="service-time middle" style="background:#0071d1;">
+               <!-- <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span>  -->
+         
+               <span class="info-icon"><i class='bx bx-time-five'></i></span>
+               <h3>Working Hours</h3>
+               <div class="time-table-section">
+                  <ul>
+                     <li><span class="left">Monday - Friday</span><span class="right">8.00 – 18.00</span></li>
+                     <li><span class="left">Saturday</span><span class="right">8.00 – 16.00</span></li>
+                     <li><span class="left">Sunday</span><span class="right">8.00 – 13.00</span></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+         <div class="row">
+            <div class="service-time three" style="background:#0060b1;">
+               <span class="info-icon"><i class='bx bx-food-menu'></i></span>
+               <h3>Clinic Timetable</h3>
+               <p>We strickly follow our clinical timetable.Our Time table is on right time. </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+	  
+<div id="service" class="services wow fadeIn">
+   <div class="container">
+      <div class="row">
+
+
+         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+            <div class="inner-services">
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon1.png" alt="#" /></span>
+                     <h4>PREMIUM FACILITIES</h4>
+                     <p>We have Some advanced facilities.</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon2.png" alt="#" /></span>
+                     <h4>LABORATORY</h4>
+                     <p>You can test & we will observer.</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon3.png" alt="#" /></span>
+                     <h4>SPECIALIST</h4>
+                     <p>Doctor details available.</p>
+                  </div>
+               </div>
+            </div>
+<!--       
+            <div class="inner-services"> -->
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon4.png" alt="#" /></span>
+                     <h4>Treatments</h4>
+                     <p>Our treatments are awesome.</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon5.png" alt="#" /></span>
+                     <h4>Pharmacy</h4>
+                     <p>We have pharmacy.</p>
+                  </div>
+               </div>
+
+               <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                  <div class="serv">
+                     <span class="icon-service"><img src="static/images/service-icon6.png" alt="#" /></span>
+                     <h4>Instruments</h4>
+                     <p>We focus on our operational Instruments.</p>
+                  </div>
+               </div>
+
+            </div>
+<!--    
+         </div> -->
+
+
+
+         
+         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="appointment-form">
+               <h3><span>+</span> Book Appointment</h3>
+               <div class="form">
+                  <form method="POST" action="{% url 'homeapp:homepage' %}" enctype="multipart/form-data">  
+                     {% csrf_token %}
+                     <fieldset>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <input type="text"  name="name" id="name" placeholder="Your Name"  />
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <input type="email" name="email" placeholder="Email Address" id="email" />
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <input type="phone" name="phonenumber" placeholder="Phone Number" id="phone" />
+                              </div>
+                           </div>
+                        </div>
+                    
+
+               
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <input type="text" id="dp1" class="datepicker" placeholder="Pick Date" name="date_of_booking" readonly>
+                              </div>
+                           </div>
+                        </div>
+
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <select class="form-control" name="doctor_name">
+                                    <option value="default">Doctor Name</option>
+                                    {% for doctor in doctors %}
+                                    <option value="{{doctor.name}}">{{doctor.name}}</option>
+                                    {% endfor %}
+                              
+                                 </select>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                              <div class="form-group">
+                                 <textarea name="text" rows="4" id="textarea_message" class="form-control" placeholder="Your Message..."></textarea>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                           <div class="row">
+                             {% if user.is_authenticated %}
+                             <div class="form-group">
+                                <div class="center"><button type="submit" value="SUBMIT">Submit</button></div>
+                              </div>
+                              {% else %}
+                              <div class="form-group">
+                                 <div class="center">
+                                    <a href="/accounts/login" class="btn btn-primary btn-lg">Please Login</a>
+                                 </div>
+                              </div>
+                              {% endif %}  
+                           </div>
+                        </div>
+                     </fieldset>
+                  </form>
+               </div>
+            </div>
+         </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+   </div>
+</div>
+<!-- end section -->
+
+
+
+{% include 'homeapp/footer.html' %}
+
+
+
+{% endblock %}
+
+
+

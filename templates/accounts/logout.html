@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'homeapp/navbar.html' %}
+
+<div class="container login-responsive">
+    <div class="heading">
+        <h1>Successfully logout</h1>
+    
+    <h3> Already have an Account?<a href="{% url 'accounts:login' %}">Login</a></h3>
+
+    </div>
+    </div>
+    {% include 'homeapp/footer.html' %}
+    
+{% endblock %}

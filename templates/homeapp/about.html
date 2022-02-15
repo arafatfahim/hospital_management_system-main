@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'homeapp/navbar.html' %}
+  
+<div id="about" class="section wow fadeIn header-margin">
+    <div class="container">
+       <div class="heading">
+          <span class="icon-logo"><img src="{% static 'images/h.png'%}" alt="#"></span>
+          <h2>The Specialist Clinic</h2>
+       </div>
+       <!-- end title -->
+       <div class="row">
+          <div class="col-md-6">
+             <div class="message-box">
+                <h4>What We Do</h4>
+                <h2>Clinic Service</h2>
+                <p class="lead">Our clinical services are divided. And, we have some departments.</p>
+                <p>We mainly divided our clinical services like:<br><br> medicine,orthopedic,gynecology departments and many more. Day by day, we are increasing our departments with many more facilities.
+                   Departments has specialist doctors with good manners.
+                </p>
+                <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>
+             </div>
+             <!-- end messagebox -->
+          </div>
+          <!-- end col -->
+          <div class="col-md-6">
+             <div class="post-media wow fadeIn">
+                <img src="{% static 'images/about_03.jpg' %}" alt="" class="img-responsive">
+                <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+             </div>
+             <!-- end media -->
+          </div>
+          <!-- end col -->
+       </div>
+       <!-- end row -->
+       <hr class="hr1">
+
+
+
+       <div class="row">
+         {% for service in departments %}
+         <div class="col-md-3 col-sm-6 col-xs-12">
+            <a href="{% url 'homeapp:departmentdetails' service.pk %}" >
+            <div class="service-widget">
+               <div class="post-media wow fadeIn">
+                  <img src="{{service.image.url}}" alt="" class="img-responsive">
+               </div>
+               <h3>{{service.name}}</h3>
+            </div>
+         </a>
+            <!-- end service -->
+         </div>
+         
+         {% endfor %}
+       </div>
+
+
+       <!-- end row -->
+    </div>
+    <!-- end container -->
+ </div>
+ 
+ {% include 'homeapp/footer.html' %}
+
+{% endblock %}

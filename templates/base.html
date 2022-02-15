@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site Metas -->
+   <title>Sunflower Hospital</title>
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="{% static 'images/h.png'%}" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}">
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   <!-- Colors CSS -->
+   <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+   <!-- ALL VERSION CSS -->
+   <link rel="stylesheet" href="{% static 'css/versions.css' %}">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="{% static 'css/responsive.css' %}"> 
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="{% static 'css/modal.css' %}">
+   <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+   <link href="{% static 'css/datepicker.css' %}" rel="stylesheet">
+   </head>
+   <body class="clinic_version">
+    <!-- LOADER -->
+    <!-- <div id="preloader">
+       <img class="preloader" src="{% static 'images/loaders/heart-loading2.gif' %}" alt="">
+    </div> -->
+
+    {% block content %}
+
+         
+
+
+    {% endblock %}
+   
+    <script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+
+       <!-- Modernizer for Portfolio -->
+   <script src="{% static 'js/modernizer.js' %}"></script>
+   <!-- end copyrights -->
+   <!-- <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a> -->
+   <!-- all js files -->
+   <script src="{% static 'js/all.js' %}"></script>
+   <!-- all plugins -->
+   <script src="{% static  'js/custom.js' %}"></script>
+   <!-- map -->
+
+   <script src="{% static 'js/datepicker.js' %}"></script>
+<script>
+
+   $(document).ready(function(){
+
+      $('.datepicker').datepicker({
+      format: 'yyyy-mm-dd',
+      autoclose: true,
+      startDate: '0d'
+      });
+      
+      $('.cell').click(function(){
+      $('.cell').removeClass('select');
+      $(this).addClass('select');
+      });
+      
+      });
+</script>
+ 
+</body>
+</html>

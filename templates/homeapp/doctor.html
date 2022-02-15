@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% include 'homeapp/navbar.html' %}
+
+
+
+  <!-- doctor -->
+	  
+  <div id="doctors" class="parallax section db header-margin" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
+    <div class="container">
+    
+    <div class="heading">
+           <span class="icon-logo"><img src="{% static 'images/h.png'%}" alt="#"></span>
+           <h2>The Specialist Doctors</h2>
+        </div>
+
+        <div class="row dev-list text-center">
+  
+            {% for doctor in doctors %}
+
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
+                <div class="widget clearfix">
+                    <img src="{{doctor.image.url}}" alt="" class="img-responsive img-rounded">
+                    <div class="widget-title">
+                        <h3>{{doctor.name}}</h3>
+                        <small>{{doctor.speciallist}}</small>
+                    </div>
+                    <!-- end title -->
+                    <p>{{doctor.details}}</p>
+
+                </div><!--widget -->
+            </div><!-- end col -->
+
+            {% endfor %}
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</div>
+
+
+
+
+
+
+
+
+
+{% include 'homeapp/footer.html' %}
+
+
+{% endblock %}

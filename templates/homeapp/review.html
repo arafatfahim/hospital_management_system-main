@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+{% include 'homeapp/navbar.html' %}
+
+
+
+  <!-- end doctor section -->
+	  
+  <div id="testimonials" class="section wb wow fadeIn header-margin">
+    <div class="container">
+       <div class="heading">
+          <span class="icon-logo"><img src="{% static 'images/h.png'%}" alt="#"></span>
+          <h2>Testimonials</h2>
+       </div>
+       <!-- end title -->
+       <div class="row">
+           {% for review in reviews %}
+          <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+             <div class="testimonial clearfix">
+                <div class="desc">
+                   <h3><i class="fa fa-quote-left"></i> {{review.title}}</h3>
+                   <p class="lead">{{review.text}}</p>
+                </div>
+                <div class="testi-meta">
+                   <img src="images/testi_01.png" alt="" class="img-responsive alignleft">
+                   <h4>{{review.name}}</h4>
+                </div>
+                <!-- end testi-meta -->
+             </div>
+             <!-- end testimonial -->
+          </div>
+          {% endfor %}
+      
+       </div>
+       <!-- end row -->
+       <hr class="invis">
+
+       <!-- end row -->
+    </div>
+    <!-- end container -->
+ </div>
+ <!-- end section -->
+ 
+ 
+
+{% include 'homeapp/footer.html' %}
+
+
+{% endblock %}
